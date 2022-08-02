@@ -24,7 +24,7 @@ class MovieTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configure(content: Resultt) {
+    func configure(content: ResultUpcoming) {
         lblTitle.text = content.title
         lblDescirption.text =  content.overview
         lblDates.text = content.releaseDate

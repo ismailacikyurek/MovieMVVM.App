@@ -19,8 +19,8 @@ class MainViewController: UIViewController {
     var modelNowPlaying : NowPlaying?
     var modelUpcoming : Upcoming?
     var modelSearch : Search?
-    var modelUpcomingSend : Resultt?
-    var modelSearchSend : ResultA?
+    var modelUpcomingSend : ResultUpcoming?
+    var modelSearchSend : ResultSearch?
     var searchDo : Bool?
     let viewModel : DashboardViewModelProtocol = DashboardViewModel()
     var timer : Timer?
@@ -46,7 +46,6 @@ class MainViewController: UIViewController {
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(movieToIndex), userInfo: nil, repeats: true)
     }
-    
     @objc func movieToIndex() {
         if currentIndex == 19 {
             currentIndex = -1
@@ -56,9 +55,7 @@ class MainViewController: UIViewController {
             pageView.currentPage = currentIndex
         }
     }
-  
-  
-    @objc func refresh(sender:AnyObject) {
+   @objc func refresh(sender:AnyObject) {
         sliderCollection.reloadData()
         movieTableView.reloadData()
         refreshControl.endRefreshing()
@@ -80,17 +77,13 @@ class MainViewController: UIViewController {
 
 
 extension MainViewController : DashboardViewModelOutputProtocol{
-    func showDataSimilar(content: Similar) {}
-    
     func showDataSearch(content: Search) {
-        modelSearch = content
+         modelSearch = content
     }
-    
     func showDataUpcoming(content: Upcoming) {
         modelUpcoming = content
         movieTableView.reloadData()
     }
-    
     func showDataNowPlaying(content: NowPlaying) {
         modelNowPlaying = content
         sliderCollection.reloadData()

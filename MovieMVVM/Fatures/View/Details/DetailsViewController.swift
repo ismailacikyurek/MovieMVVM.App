@@ -15,13 +15,13 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     
-    let viewModel : DashboardViewModelProtocol = DashboardViewModel()
+    let viewModel : DetailsViewModelProtocol = DetailsViewModel() as! DetailsViewModelProtocol
     var modelSimilar : Similar?
    
    @IBOutlet weak var sliderCollection: UICollectionView!
     @IBOutlet weak var txtDescription: UITextView!
-    var modelSearch : ResultA?
-    var modelUpcoming : Resultt?
+    var modelSearch : ResultSearch?
+    var modelUpcoming : ResultUpcoming?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,44 +31,46 @@ class DetailsViewController: UIViewController {
         sliderCollection.dataSource = self
         
         if modelSearch != nil {
-            label.text = modelSearch?.title
-            lblDate.text = modelSearch?.releaseDate
-            txtDescription.text = modelSearch?.overview
-            lblımdb.text = "\(modelSearch!.voteAverage!)"
-            
-            guard let urlStr = modelSearch?.posterPath  else { return } //BAZI FİLMLERDE POSTERPATH , BAZILARINDA BACKDROPPATH BOŞ OLDUĞU İÇİN, HANGİSİ VARSA EKRANDA GÖSTERİLSİN.
-            let urlFront = "https://image.tmdb.org/t/p/w500"
-            let Url = "\(urlFront)\(urlStr)"
-            PhotoİmageView.kf.setImage(with:URL(string: Url))
-            
-            guard let urlStrPosther = modelSearch?.backdropPath  else { return }//BAZI FİLMLERDE POSTERPATH , BAZILARINDA BACKDROPPATH BOŞ OLDUĞU İÇİN, HANGİSİ VARSA EKRANDA GÖSTERİLSİN.
-            print("URLPSOTER\(urlStrPosther)")
-            let UrlPor = "\(urlFront)\(urlStrPosther)"
-            PhotoİmageView.kf.setImage(with:URL(string: UrlPor))
-            
-            
-            navigationItem.title = modelSearch?.title
-            viewModel.theMovieServiceSimilar(id: (modelSearch?.id)!)
+       modelSearchDataLoad()
         } else {
-            label.text = modelUpcoming?.title
-            lblDate.text = modelUpcoming?.releaseDate
-            txtDescription.text = modelUpcoming?.overview
-            lblımdb.text = "\(modelUpcoming!.voteAverage!)"
-            guard let urlStr = modelUpcoming?.backdropPath else { return }
-            let urlFront = "https://image.tmdb.org/t/p/w500"
-            let Url = "\(urlFront)\(urlStr)"
-            PhotoİmageView.kf.setImage(with:URL(string: Url))
-            navigationItem.title = modelUpcoming?.title
-            viewModel.theMovieServiceSimilar(id: (modelUpcoming?.id)!)
-           
-        }
+         modelUpcmoingDataLoad()
+           }
+    }
+    
+    func modelUpcmoingDataLoad() {
+        label.text = modelUpcoming?.title
+        lblDate.text = modelUpcoming?.releaseDate
+        txtDescription.text = modelUpcoming?.overview
+        lblımdb.text = "\(modelUpcoming!.voteAverage!)"
+        guard let urlStr = modelUpcoming?.backdropPath else { return }
+        let urlFront = "https://image.tmdb.org/t/p/w500"
+        let Url = "\(urlFront)\(urlStr)"
+        PhotoİmageView.kf.setImage(with:URL(string: Url))
+        navigationItem.title = modelUpcoming?.title
+        viewModel.theMovieServiceSimilar(id: (modelUpcoming?.id)!)
+    }
+
+    func modelSearchDataLoad() {
+        label.text = modelSearch?.title
+        lblDate.text = modelSearch?.releaseDate
+        txtDescription.text = modelSearch?.overview
+        lblımdb.text = "\(modelSearch!.voteAverage!)"
+        
+        guard let urlStr = modelSearch?.posterPath  else { return } //BAZI FİLMLERDE POSTERPATH , BAZILARINDA BACKDROPPATH BOŞ OLDUĞU İÇİN, HANGİSİ VARSA EKRANDA GÖSTERİLSİN.
+        let urlFront = "https://image.tmdb.org/t/p/w500"
+        let Url = "\(urlFront)\(urlStr)"
+        PhotoİmageView.kf.setImage(with:URL(string: Url))
+        
+        guard let urlStrPosther = modelSearch?.backdropPath  else { return }//BAZI FİLMLERDE POSTERPATH , BAZILARINDA BACKDROPPATH BOŞ OLDUĞU İÇİN, HANGİSİ VARSA EKRANDA GÖSTERİLSİN.
+        print("URLPSOTER\(urlStrPosther)")
+        let UrlPor = "\(urlFront)\(urlStrPosther)"
+        PhotoİmageView.kf.setImage(with:URL(string: UrlPor))
+        navigationItem.title = modelSearch?.title
+        viewModel.theMovieServiceSimilar(id: (modelSearch?.id)!)
     }
 }
 
-extension DetailsViewController : DashboardViewModelOutputProtocol {
-    func showDataNowPlaying(content: NowPlaying) {}
-    func showDataUpcoming(content: Upcoming) {}
-    func showDataSearch(content: Search) {}
+extension DetailsViewController : DetailsViewModelOutputProtocol {
     func showDataSimilar(content: Similar) {
         modelSimilar = content
         }

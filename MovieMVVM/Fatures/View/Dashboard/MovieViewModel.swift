@@ -15,16 +15,13 @@ import Kingfisher
 protocol DashboardViewModelProtocol {
     func initialize()
     func setUpDelegate(_ viewController: MainViewController)
-    func setUpDelegate(_ viewController: DetailsViewController)
     func theMovieServiceSearch(search : String)
-    func theMovieServiceSimilar(id : Int)
 }
 
 protocol DashboardViewModelOutputProtocol {
     func showDataNowPlaying(content: NowPlaying)
     func showDataUpcoming(content: Upcoming)
     func showDataSearch(content: Search)
-    func showDataSimilar(content: Similar)
 }
 
 class DashboardViewModel:NSObject {
@@ -60,25 +57,9 @@ let urlUpcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=e1f05eb6d
            print(error?.description ?? "An error occured")
        }
     }
-    
-   func theMovieServiceSimilar(id : Int) {
-       let urlSimilar = "https://api.themoviedb.org/3/movie/\(id)/similar?api_key=e1f05eb6d6888cc4a751a49802070b48&language=en-US&page=1"
-       service.fethAllPostsSimilar(url: urlSimilar) { [weak self] model in
-           self?.delegate?.showDataSimilar(content: model)
-       } onFail: { error in
-           print(error?.description ?? "An error occured")
-       }
-    }
-    
-    
 }
 
 extension DashboardViewModel: DashboardViewModelProtocol {
-    func setUpDelegate(_ viewController: DetailsViewController) {
-        delegate = viewController as! DashboardViewModelOutputProtocol
-    }
-    
-   
     func setUpDelegate(_ viewController: MainViewController) {
         delegate = viewController as! DashboardViewModelOutputProtocol
     }

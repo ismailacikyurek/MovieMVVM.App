@@ -204,7 +204,7 @@
                         <segue destination="SOq-Wx-034" kind="show" identifier="goToDetail" id="g5D-Oz-t72"/>
                     </connections>
                 </viewController>
-                <searchBar contentMode="redraw" showsCancelButton="YES" id="MN1-Jg-z3Y">
+                <searchBar contentMode="redraw" placeholder="search" showsCancelButton="YES" id="MN1-Jg-z3Y">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textInputTraits key="textInputTraits"/>
@@ -286,9 +286,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbk-RO-R8q">
-                                <rect key="frame" x="10" y="412" width="394" height="259"/>
+                                <rect key="frame" x="10" y="412" width="394" height="229"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore oen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -313,14 +313,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="132" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="81r-sq-zaR">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soryyy" translatesAutoresizingMaskIntoConstraints="NO" id="81r-sq-zaR">
                                                     <rect key="frame" x="4" y="4" width="124" height="119"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="119" id="eWd-Pe-L6v"/>
                                                         <constraint firstAttribute="width" constant="116" id="mrL-Dq-uFm"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suy-mJ-Anm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulunamadı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suy-mJ-Anm">
                                                     <rect key="frame" x="2" y="135" width="128" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -345,7 +345,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benzer Filmler" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gR-dZ-hnf">
-                                <rect key="frame" x="7" y="647" width="400" height="28"/>
+                                <rect key="frame" x="7" y="649" width="400" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="6nv-nG-tNi"/>
                                 </constraints>
@@ -365,11 +365,12 @@
                             <constraint firstItem="7gR-dZ-hnf" firstAttribute="leading" secondItem="sqU-6b-5Lw" secondAttribute="leading" constant="7" id="ABZ-aP-0uW"/>
                             <constraint firstItem="hVi-jm-Db0" firstAttribute="leading" secondItem="sqU-6b-5Lw" secondAttribute="leading" id="BDt-kL-6uZ"/>
                             <constraint firstItem="OsP-nj-S6Z" firstAttribute="leading" secondItem="0gd-eb-WT0" secondAttribute="trailing" constant="10" id="DYQ-r3-bf1"/>
-                            <constraint firstItem="hVi-jm-Db0" firstAttribute="top" secondItem="Pbk-RO-R8q" secondAttribute="bottom" constant="7" id="DZ5-ke-qk1"/>
+                            <constraint firstItem="7gR-dZ-hnf" firstAttribute="top" secondItem="Pbk-RO-R8q" secondAttribute="bottom" constant="8" id="DZ5-ke-qk1"/>
                             <constraint firstItem="uxn-2r-fjZ" firstAttribute="centerY" secondItem="kh3-fG-vBd" secondAttribute="centerY" constant="-1" id="Fzl-oh-Idr"/>
                             <constraint firstItem="0gd-eb-WT0" firstAttribute="leading" secondItem="QFV-wD-hyS" secondAttribute="trailing" constant="2" id="JVT-NT-PC3"/>
                             <constraint firstItem="kh3-fG-vBd" firstAttribute="leading" secondItem="OsP-nj-S6Z" secondAttribute="trailing" constant="1" id="KxM-4v-IuR"/>
                             <constraint firstItem="1XJ-HM-DfQ" firstAttribute="top" secondItem="QFV-wD-hyS" secondAttribute="top" id="NlB-sR-taw"/>
+                            <constraint firstItem="QFV-wD-hyS" firstAttribute="leading" secondItem="sqU-6b-5Lw" secondAttribute="leading" constant="3" id="OwU-Vm-oZv"/>
                             <constraint firstItem="sqU-6b-5Lw" firstAttribute="trailing" secondItem="Pbk-RO-R8q" secondAttribute="trailing" constant="10" id="TDR-Cj-V29"/>
                             <constraint firstItem="uxn-2r-fjZ" firstAttribute="firstBaseline" secondItem="kh3-fG-vBd" secondAttribute="firstBaseline" constant="3" id="TNg-dQ-4Gj"/>
                             <constraint firstItem="1XJ-HM-DfQ" firstAttribute="trailing" secondItem="KP3-xG-0Bm" secondAttribute="trailingMargin" id="TTD-n3-IHg"/>
@@ -381,7 +382,7 @@
                             <constraint firstItem="1XJ-HM-DfQ" firstAttribute="top" secondItem="B7c-aF-smL" secondAttribute="bottom" constant="12" id="ckI-bb-Lu9"/>
                             <constraint firstItem="uxn-2r-fjZ" firstAttribute="bottom" secondItem="kh3-fG-vBd" secondAttribute="bottom" constant="-5" id="dSZ-Bs-VtZ"/>
                             <constraint firstItem="B7c-aF-smL" firstAttribute="leading" secondItem="sqU-6b-5Lw" secondAttribute="leading" id="eNh-M0-YRX"/>
-                            <constraint firstItem="hVi-jm-Db0" firstAttribute="top" secondItem="7gR-dZ-hnf" secondAttribute="bottom" constant="3" id="fAA-3o-KEJ"/>
+                            <constraint firstItem="hVi-jm-Db0" firstAttribute="top" secondItem="7gR-dZ-hnf" secondAttribute="bottom" constant="1" id="fAA-3o-KEJ"/>
                             <constraint firstItem="uxn-2r-fjZ" firstAttribute="top" secondItem="kh3-fG-vBd" secondAttribute="top" constant="3" id="lzN-6H-qSR"/>
                             <constraint firstItem="0gd-eb-WT0" firstAttribute="top" secondItem="QFV-wD-hyS" secondAttribute="top" constant="4" id="mAW-ni-lDg"/>
                             <constraint firstItem="kh3-fG-vBd" firstAttribute="centerY" secondItem="OsP-nj-S6Z" secondAttribute="centerY" id="oU7-JN-KoP"/>
@@ -405,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XvL-lu-wRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1650.7246376811595" y="144.64285714285714"/>
+            <point key="canvasLocation" x="1654" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qSf-Za-SCY">
@@ -428,6 +429,7 @@
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="soryyy" width="1076" height="1312"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star 23.14.56" width="32" height="32"/>
         <image name="ımdb" width="98" height="48"/>

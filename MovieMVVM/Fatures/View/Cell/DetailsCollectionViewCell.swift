@@ -12,7 +12,7 @@ class DetailsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var photoimageView: UIImageView!
     
-    func configure(content: ResultB) {
+    func configure(content: ResultSimilar) {
       
         guard let urlStr = content.title else { return }
         lblTitle.text = urlStr
