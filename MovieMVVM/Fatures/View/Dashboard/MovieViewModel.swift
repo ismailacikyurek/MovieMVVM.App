@@ -34,7 +34,7 @@ class DashboardViewModel:NSObject {
     
      func theMovieDbServicee() {
         let urlNowPlaying = "https://api.themoviedb.org/3/movie/now_playing?api_key=e1f05eb6d6888cc4a751a49802070b48&language=en-US&page=1"
-        service.fethAllPostsNowPlaying(url: urlNowPlaying) { [weak self] model in
+        service.fethAllPosts(url: urlNowPlaying) { [weak self] model in
             self?.delegate?.showDataNowPlaying(content: model)
             
         } onFail: { error in
@@ -42,7 +42,7 @@ class DashboardViewModel:NSObject {
         }
          
 let urlUpcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=e1f05eb6d6888cc4a751a49802070b48&language=en-US&page=1"
-         service.fethAllPostsUpcoming(url: urlUpcoming) { model in
+         service.fethAllPosts(url: urlUpcoming) { model in
              self.delegate?.showDataUpcoming(content: model)
          } onFail: { error in
              print(error?.description ?? "An error occured")
@@ -51,7 +51,7 @@ let urlUpcoming = "https://api.themoviedb.org/3/movie/upcoming?api_key=e1f05eb6d
     func theMovieServiceSearch(search : String) {
        let urlSearch = "https://api.themoviedb.org/3/search/movie?api_key=e1f05eb6d6888cc4a751a49802070b48&query=\(search)"
         print(urlSearch)
-       service.fethAllPostsSearch(url: urlSearch) { [weak self] model in
+       service.fethAllPosts(url: urlSearch) { [weak self] model in
            self?.delegate?.showDataSearch(content: model)
        } onFail: { error in
            print(error?.description ?? "An error occured")

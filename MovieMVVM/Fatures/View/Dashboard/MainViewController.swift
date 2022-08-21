@@ -45,6 +45,8 @@ class MainViewController: UIViewController {
 
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(movieToIndex), userInfo: nil, repeats: true)
+       
+       
     }
     @objc func movieToIndex() {
         if currentIndex == 19 {
@@ -158,7 +160,9 @@ extension MainViewController : UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        modelSearchSend = modelSearch?.results?[indexPath.row]
         modelUpcomingSend = modelUpcoming?.results?[indexPath.row]
+      
         performSegue(withIdentifier: "goToDetail", sender: indexPath)
+     
     }
 }
 
